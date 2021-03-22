@@ -1,0 +1,157 @@
+@font-face{
+    font-family:'Alien';
+    src:url('alien.woff');
+}
+
+body{
+    color: white;
+    font-family: Alien;
+    background-color: rgb(21, 14, 44);
+}
+
+h1{
+    text-align: center;
+}
+
+.head{
+    margin: 20px;
+}
+
+p{
+    margin: 0px;
+    display: none;
+}
+
+#images{
+    margin: auto;
+    width: 250px;
+    height: 150px;
+    border: 5px solid white;
+}
+
+.foto{
+    width: 250px;
+    height: 150px;
+}
+
+#morning.block, #afternoon.block, #evening.block, #night.block{
+    display: block;
+}
+
+#morning.none, #afternoon.none, #evening.none, #night.none{
+    display: none;
+}
+
+.tijd, .datum{
+    background-color: rgba(0, 183, 235, 0.5);
+    margin: 20px;
+    padding: 5px;
+}
+.trans {
+	opacity: 0;
+}
+
+.elon{
+    width: 150px;
+    left: 20px;
+    position: absolute;
+    animation: 3s lopen infinite alternate ease-in-out;
+}
+@keyframes lopen{
+    0%{
+        left: 20px;
+    }
+    100%{
+        left: 220px;
+    }
+}
+#images{
+    grid-area: image;
+}
+.tijd{
+    grid-area: tijd;
+}
+.datum{
+    grid-area: datum;
+}
+.elon2{
+    grid-area: elon;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1365px){
+
+    p{
+        display: block;
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (min-width: 1366px) and (max-width: 1919px){
+    main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "image image"
+        "tijd datum"
+        "elon elon";
+        gap: 5px;
+    }
+    p{
+        display: block;
+        font-size: 1.5em;
+    }
+
+    #images, .foto{
+        width: 300px;
+        height: 200px;
+    }
+    
+    .elon{ 
+        width: 180px;
+        animation: 5s lopen2 infinite alternate ease-in-out;
+    }
+    @keyframes lopen2{
+        0%{
+            left: 20px;
+        }
+        100%{
+            left: 1200px;
+        }
+    }
+}
+@media only screen and (min-width: 1920px){
+    main{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "tijd image datum"
+        "elon elon elon";
+        gap: 5px;
+    }
+    p{
+        display: block;
+        font-size: 2em;
+    }
+
+    #images, .foto{
+        width: 450px;
+        height: 280px;
+    }
+
+    #time, #date{
+        font-size: 5em;
+    }
+    
+    .elon{ 
+        width: 250px;
+        animation: 8s lopen3 infinite alternate ease-in-out;
+    }
+    @keyframes lopen3{
+        0%{
+            left: 20px;
+        }
+        100%{
+            left: 1650px;
+        }
+    }
+}
